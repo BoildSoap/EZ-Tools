@@ -7,4 +7,47 @@
     android:layout_height="match_parent"
     tools:context=".homepage">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="231dp"
+      android:layout_height="118dp"
+      android:text="Borrow a tool"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.616" />
+
+  <Button
+      android:id="@+id/button4"
+      android:layout_width="231dp"
+      android:layout_height="118dp"
+      android:text="LOGOUT"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.892" />
+
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="231dp"
+      android:layout_height="118dp"
+      android:text="Lend out a Tool"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.357" />
+
+  <Button
+      android:id="@+id/button"
+      android:layout_width="231dp"
+      android:layout_height="118dp"
+      android:text="My Backpack"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.101" />
+</androidx.constraintlayout.widget.ConstraintLayout>
