@@ -33,7 +33,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_sign_up_login);
 
         firebaseHelper = new FirebaseHelper();
         logInB = findViewById(R.id.logInButton);
@@ -90,7 +90,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
                                 firebaseHelper.attachReadDataToUser();
 
 
-                                Intent intent = new Intent(SignInActivity.this, SelectActionActivity.class);
+                                Intent intent = new Intent(SignUpLoginActivity.this, homepage.class);
                                 startActivity(intent);
 
                             }
@@ -107,14 +107,14 @@ public class SignUpLoginActivity extends AppCompatActivity  {
                                     throw task.getException();
                                 } catch (FirebaseAuthInvalidCredentialsException e) {
                                     // poorly formatted email address
-                                    Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Sign up failed for " + userName + " " + password + e.getMessage());
                                 } catch (FirebaseAuthEmailException e) {
                                     // duplicate email used
-                                    Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Sign up failed for " + userName + " " + password + e.getMessage());
                                 } catch (Exception e) {
-                                    Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Sign up failed for " + userName + " " + password + e.getMessage());
                                 }
 
@@ -154,7 +154,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
 
                                 Log.d(TAG, userName + " logged in");
                                 Toast.makeText(getApplicationContext(), "Logged in", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignInActivity.this, SelectActionActivity.class);
+                                Intent intent = new Intent(SignUpLoginActivity.this, homepage.class);
                                 startActivity(intent);
                             } else {
     /*
@@ -168,14 +168,14 @@ public class SignUpLoginActivity extends AppCompatActivity  {
                                     throw task.getException();
                                 } catch (FirebaseAuthInvalidCredentialsException e) {
                                     // wrong password
-                                    Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Log in failed for " + userName + " " + password + e.getMessage());
                                 } catch (FirebaseAuthInvalidUserException e) {
                                     // wrong email, no user found with this email
-                                    Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Log in failed for " + userName + " " + password + e.getMessage());
                                 } catch (Exception e) {
-                                    Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Log in failed for " + userName + " " + password + e.getMessage());
                                 }
 
@@ -212,7 +212,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
         Log.d(TAG, "inside updateUI: " + firebaseHelper.getmAuth().getUid());
         if (firebaseHelper.getmAuth().getUid() != null) {
             firebaseHelper.attachReadDataToUser();
-            Intent intent = new Intent(SignInActivity.this, SelectActionActivity.class);
+            Intent intent = new Intent(SignUpLoginActivity.this, homepage.class);
             startActivity(intent);
         }
     }
