@@ -11,8 +11,9 @@
         android:id="@+id/userNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
         android:ems="10"
-        android:hint="User name"
+        android:hint="Username"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,6 +24,7 @@
         app:layout_constraintVertical_bias="0.406" />
 
     <EditText
+        android:textColorHint="@color/white"
         android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
