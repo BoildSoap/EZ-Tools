@@ -12,6 +12,8 @@
       android:id="@+id/button4"
       android:layout_width="157dp"
       android:layout_height="49dp"
+      android:background="#21293D"
+      
       android:text="LOGOUT"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
