@@ -37,6 +37,9 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/bottomMargin"
+        android:layout_marginBottom="@dimen/bottomMargin"
+
         app:layout_constraintVertical_bias="0.532" />
 
     <Button
@@ -45,6 +48,8 @@
         android:layout_height="wrap_content"
         android:onClick="logInClicked"
         android:text="Log In"
+        android:layout_marginTop="@dimen/bottomMargin"
+        android:layout_marginBottom="@dimen/bottomMargin"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +64,9 @@
         android:layout_height="wrap_content"
         android:onClick="signUpClicked"
         android:text="Sign Up"
+
+        android:layout_marginTop="@dimen/bottomMargin"
+        android:layout_marginBottom="@dimen/bottomMargin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.318"
@@ -68,14 +76,16 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="174dp"
-        android:layout_height="160dp"
+        android:layout_width="@dimen/textViewWidth"
+        android:layout_height="@dimen/imageHeight"
+        android:layout_marginTop="@dimen/bottomMargin"
+        android:layout_marginBottom="@dimen/bottomMargin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134"
+        app:layout_constraintVertical_bias="0.04"
         app:srcCompat="@drawable/easytools" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
