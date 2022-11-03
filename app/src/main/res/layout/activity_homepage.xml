@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="#21293D"
+    android:background="#21293D"
+
     tools:context=".homepage">
 
   <Button
@@ -13,7 +14,6 @@
       android:layout_width="157dp"
       android:layout_height="49dp"
       android:background="#21293D"
-
       android:onClick="logOutClicked"
       android:text="LOGOUT"
       app:layout_constraintBottom_toBottomOf="parent"
