@@ -2,6 +2,9 @@
 <resources>
     <dimen name="textViewWidth">200dp</dimen>
     <dimen name="textViewHeight">40dp</dimen>
+    <dimen name="buttonHeight">40dp</dimen>
+    <dimen name="buttonWidth">20dp</dimen>
+    <dimen name="marginLength">30dp</dimen>
     <dimen name="editTextWidth">300dp</dimen>
     <dimen name="editTextHeight">60dp</dimen>
     <dimen name="topMargin">30dp</dimen>
@@ -10,4 +13,8 @@
     <dimen name="topPadding">10dp</dimen>
     <dimen name="editTextPadding">10dp</dimen>
     <dimen name="imageHeight">150dp</dimen>
+    <dimen name="inputTextHeight">10dp</dimen>
+    <dimen name="inputTextWidth">20dp</dimen>
+
+
 </resources>
