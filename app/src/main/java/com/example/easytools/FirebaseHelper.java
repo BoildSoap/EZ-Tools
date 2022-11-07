@@ -47,9 +47,9 @@ import java.util.concurrent.Executor;
 public class FirebaseHelper {
     public final String TAG = "Denna";
     private static String uid = null;      // var will be updated for currently signed in user
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
-    private ArrayList<Tool> myTools;
+    private final FirebaseAuth mAuth;
+    private final FirebaseFirestore db;
+    private final ArrayList<Tool> myTools;
     // we don't need this yet
     // private ArrayList<Memory> myItems = new ArrayList<>();
 
@@ -69,12 +69,12 @@ public class FirebaseHelper {
 
     public void logOutUser() {
         mAuth.signOut();
-        this.uid = null;
+        uid = null;
     }
 
     //
     public void updateUid(String uid) {
-        this.uid = uid;
+        FirebaseHelper.uid = uid;
     }
     public void attachReadDataToUser() {
         // This is necessary to avoid the issues we ran into with data displaying before it

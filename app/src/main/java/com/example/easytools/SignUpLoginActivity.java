@@ -186,7 +186,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
 
                                 // if log in fails, display a message to the user along with the exception from firebase auth
                                 Log.d(TAG, "Log in failed for " + userName + " " + password +
-                                        " because of \n" + task.toString());
+                                        " because of \n" + task);
                                 Toast.makeText(getApplicationContext(), "Login failed, username and password do not match", Toast.LENGTH_SHORT).show();
                             }
                         }
