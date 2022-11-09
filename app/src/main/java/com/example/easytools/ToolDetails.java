@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 public class ToolDetails extends AppCompatActivity {
     Spinner spinner;
-    EditText memoryName, memoryDesc;
+    EditText toolName, toolDesc;
     String spinnerSelectedText = "none";
     int memoryRatingNum;
 
@@ -18,13 +18,13 @@ public class ToolDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_details);
 
-        memoryName = findViewById(R.id.name);
-        memoryDesc = findViewById(R.id.desc);
+        toolName = findViewById(R.id.name);
+        toolDesc = findViewById(R.id.desc);
     }
 
     public void addMemoryButtonClicked(View view) {
-        String memName = memoryName.getText().toString();
-        String memDesc = memoryDesc.getText().toString();
+        String memName = toolName.getText().toString();
+        String memDesc = toolDesc.getText().toString();
 
         for (int i = 1; i < 6; i++) {
             if (spinnerSelectedText.equals(getResources().getStringArray(R.array.toolList)[i])) {
@@ -38,8 +38,8 @@ public class ToolDetails extends AppCompatActivity {
         Tool m = new Tool(memoryRatingNum, memName, memDesc);
         SignUpLoginActivity.firebaseHelper.addData(m);
 
-        memoryName.setText("");
-        memoryDesc.setText("");
+        toolName.setText("");
+        toolDesc.setText("");
 
     }
 }
