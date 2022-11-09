@@ -15,6 +15,6 @@
     <dimen name="imageHeight">150dp</dimen>
     <dimen name="inputTextHeight">10dp</dimen>
     <dimen name="inputTextWidth">20dp</dimen>
-
+    <dimen name="textHeight">20dp</dimen>
 
 </resources>
