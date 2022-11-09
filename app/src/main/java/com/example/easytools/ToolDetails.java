@@ -18,7 +18,8 @@ public class ToolDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_details);
 
-        toolName = findViewById(R.id.);
+        toolName = findViewById(R.id.name);
+        
         toolDesc = findViewById(R.id.desc);
     }
 
@@ -27,7 +28,7 @@ public class ToolDetails extends AppCompatActivity {
         String memDesc = toolDesc.getText().toString();
 
         for (int i = 1; i < 6; i++) {
-            if (spinnerSelectedText.equals(getResources().getStringArray(R.array.toolList)[i])) {
+            if (spinnerSelectedText.equals(getResources().getStringArray(R.array.toolsList)[i])) {
                 memoryRatingNum = 6-i;
                 break;
             }

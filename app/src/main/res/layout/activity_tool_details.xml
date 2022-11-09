@@ -13,10 +13,9 @@
         android:text="Email Contact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <EditText
         android:id="@+id/rentduration"
@@ -25,10 +24,10 @@
         android:text="Rent Duration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <EditText
         android:id="@+id/city"
@@ -37,10 +36,10 @@
         android:text="City"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <Button
         android:id="@+id/loantoolbutton"
@@ -49,43 +48,60 @@
         android:text="Loan out a Tool"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.739" />
 
     <TextView
         android:id="@+id/desc"
         android:layout_width="203dp"
         android:layout_height="128dp"
-        android:text="Tool Details"
         android:gravity="center"
+        android:text="Tool Details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <EditText
         android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
         android:text="Price"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/borrowButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Borrow a Tool"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Tool Name"
+        app:layout_constraintBottom_toTopOf="@+id/desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
