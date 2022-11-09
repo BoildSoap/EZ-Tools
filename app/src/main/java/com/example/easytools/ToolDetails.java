@@ -27,7 +27,7 @@ public class ToolDetails extends AppCompatActivity {
         String memDesc = memoryDesc.getText().toString();
 
         for (int i = 1; i < 6; i++) {
-            if (spinnerSelectedText.equals(getResources().getStringArray(R.array.)[i])) {
+            if (spinnerSelectedText.equals(getResources().getStringArray(R.array.toolList)[i])) {
                 memoryRatingNum = 6-i;
                 break;
             }
