@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ToolDetails">
 
-    <TextView
-        android:id="@+id/textView8"
+    <EditText
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email Contact"
@@ -18,8 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.404" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <EditText
+        android:id="@+id/rentduration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rent Duration"
@@ -30,8 +30,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.377" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="City"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.351" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/loantoolbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Loan out a Tool"
@@ -55,7 +55,7 @@
         app:layout_constraintVertical_bias="0.571" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/desc"
         android:layout_width="203dp"
         android:layout_height="128dp"
         android:text="Tool Details"
@@ -66,8 +66,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <EditText
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price"

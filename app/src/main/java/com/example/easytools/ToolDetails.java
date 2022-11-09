@@ -18,7 +18,7 @@ public class ToolDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_details);
 
-        toolName = findViewById(R.id.name);
+        toolName = findViewById(R.id.);
         toolDesc = findViewById(R.id.desc);
     }
 
