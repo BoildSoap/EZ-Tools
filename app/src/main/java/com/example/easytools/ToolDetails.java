@@ -19,7 +19,7 @@ public class ToolDetails extends AppCompatActivity {
         setContentView(R.layout.activity_tool_details);
 
         toolName = findViewById(R.id.name);
-        
+
         toolDesc = findViewById(R.id.desc);
     }
 
