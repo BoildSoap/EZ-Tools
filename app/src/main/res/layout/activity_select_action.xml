@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SelectActionActivity">
+    tools:context=".SelectAction">
 
     <Button
         android:id="@+id/button"
-        android:onClick="showMemories"
+        android:onClick="showTools"
         android:layout_width="232dp"
         android:layout_height="47dp"
         android:text="View Memory"
@@ -24,7 +24,7 @@
         android:layout_width="236dp"
         android:layout_height="43dp"
         android:text="Add Memory"
-        android:onClick="addMemories"
+        android:onClick="addTools"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

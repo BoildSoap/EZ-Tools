@@ -13,6 +13,20 @@ public class homepage extends AppCompatActivity {
         Intent intent = new Intent(homepage.this, SignUpLoginActivity.class);
         startActivity(intent);
     }
+    public void toBackpack(View view) {
+        Intent intent = new Intent(homepage.this, backpack.class);
+        startActivity(intent);
+    }
+    public void showTools(View view) {
+        Intent intent = new Intent(homepage.this, backpack.class);
+        startActivity(intent);
+    }
+
+    public void addTools(View view) {
+        Intent intent = new Intent(homepage.this, AddTool.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

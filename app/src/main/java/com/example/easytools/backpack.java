@@ -21,7 +21,7 @@ public class backpack extends AppCompatActivity {
         setContentView(R.layout.activity_backpack);
 
         // find listView in xml
-        myMemoryListView = findViewById(R.id.ADDLIST HERE);
+        myMemoryListView = findViewById(R.id.toolList);
         // get ArrayList of data from firebase
         ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMemoryArrayList();
         // bind data to the ArrayAdapter (this is a default adapter
