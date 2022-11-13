@@ -8,7 +8,6 @@
     android:text="My Choice"
     android:padding="@dimen/padding"
     android:background="@color/white"
-    android:textColor="mainColor"
     android:textSize="@dimen/fontRegular"
     android:layout_marginTop="@dimen/margin"
     />
