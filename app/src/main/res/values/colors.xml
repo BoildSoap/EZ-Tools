@@ -10,4 +10,6 @@
     <color name="primaryTextColor">#F44336</color>
     <color name="secondaryDarkColor">#5A1D18</color>
     <color name="spinnerColor">#F19992</color>
+    <color name="mainColor">#21293D</color>
+
 </resources>
