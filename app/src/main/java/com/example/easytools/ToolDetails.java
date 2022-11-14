@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 
 public class ToolDetails extends AppCompatActivity {
-    Spinner spinner;
     EditText toolName, toolDesc;
     String spinnerSelectedText = "none";
     int memoryRatingNum;
@@ -19,8 +18,6 @@ public class ToolDetails extends AppCompatActivity {
         setContentView(R.layout.activity_tool_details);
 
         toolName = findViewById(R.id.name);
-
-        toolDesc = findViewById(R.id.desc);
     }
 
     public void addMemoryButtonClicked(View view) {

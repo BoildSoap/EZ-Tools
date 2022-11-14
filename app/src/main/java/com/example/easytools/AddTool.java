@@ -34,20 +34,6 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
         toolName = findViewById(R.id.memNameEditText);
         toolDesc = findViewById(R.id.memoryDescEditText);
 
-
-        // this attaches my spinner design (spinner_list.xml) and my array of spinner choices(R.array.memoryRating)
-        spinner = findViewById(R.id.memorySpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_list,
-                getResources().getStringArray(R.array.toolsList));
-
-        // ADD WHEN MAKE ARRAY!!!!^^^^^
-
-
-        // this attaches my custom row design (how I want each row to look)
-        adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_row);
-
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -58,9 +44,9 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
     @Override
     public void onNothingSelected(AdapterView<?> parent) { }
 
-    public void addMemoryButtonClicked(View view) {
-        String memName = toolName.getText().toString();
-        String memDesc = toolDesc.getText().toString();
+    public void addToolButtonClicked(View view) {
+        String name = toolName.getText().toString();
+        String desc = toolDesc.getText().toString();
 
 
         //*** If you only have numbers in your string array, then don't include this part! *** //
@@ -91,7 +77,7 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
 
         // Everyone needs this part below this comment
 
-        Tool m = new Tool(memoryRatingNum, memName, memDesc);
+        Tool m = new Tool(memoryRatingNum, name, desc);
         SignUpLoginActivity.firebaseHelper.addData(m);
 
         toolName.setText("");

@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">EZ-Tools</string>
     <string-array name="toolsList">
-        <item>6</item>
-        <item>5</item>
-        <item>4</item>
-        <item>3</item>
-        <item>2</item>
-        <item>1</item>
+        <item>1 Hammer</item>
+        <item>2 Drill</item>
+        <item>3 Axe</item>
+        <item>4 Snow Blower</item>
+        <item>5 Leaf Blower</item>
+        <item>6 Rake</item>
     </string-array>
 
 </resources>

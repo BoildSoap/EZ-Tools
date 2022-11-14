@@ -3,31 +3,33 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Tool implements Parcelable {
-    private int rating;
     private String name, desc;
     private String docID;
+    private String userID;
+    // add boolean for status
+    // add user id for checked out
 
     public Tool(int rating, String name, String desc, String docID) {
-        this.rating = rating;
         this.name = name;
         this.desc = desc;
         this.docID = docID;
+        this.userID = userID;
     }
 
     public Tool(int rating, String name, String desc) {
-        this.rating = rating;
         this.name = name;
         this.desc = desc;
         this.docID = "No docID yet";
+        this.userID = "No userID yet";
     }
 
 
     // A default constructor is required for the Parceable interface to work
     public Tool() {
-        rating = 0;
         name = "No name";
         desc = "No desc";
         this.docID = "No docID yet";
+        this.userID = "No userID yet";
     }
 
     /** This is a "constructor" of sorts that is needed with the Parceable interface to
@@ -39,10 +41,10 @@ public class Tool implements Parcelable {
      */
 
     public Tool(Parcel parcel) {
-        rating = parcel.readInt();
         name = parcel.readString();
         desc = parcel.readString();
         docID = parcel.readString();
+        userID = parcel.readString();
     }
 
     /**
@@ -54,10 +56,11 @@ public class Tool implements Parcelable {
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(rating);
+
         dest.writeString(name);
         dest.writeString(desc);
         dest.writeString(docID);
+        dest.writeString(userID);
 
     }
 
@@ -96,18 +99,6 @@ public class Tool implements Parcelable {
         return 0;
     }
 
-    public String toString() {
-        return "Rating: " + rating + " " + name;
-    }
-
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
 
     public String getName() {
         return name;
