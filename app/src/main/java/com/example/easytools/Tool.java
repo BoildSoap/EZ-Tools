@@ -6,21 +6,28 @@ public class Tool implements Parcelable {
     private String name, desc;
     private String docID;
     private String userID;
+    boolean isAval;
+    private String outUID;
+
     // add boolean for status
     // add user id for checked out
 
-    public Tool(int rating, String name, String desc, String docID) {
+    public Tool(String name, String desc, String docID,String userID, String outUID) {
         this.name = name;
         this.desc = desc;
         this.docID = docID;
         this.userID = userID;
+        this.isAval = true;
+        this.outUID = outUID;
     }
 
-    public Tool(int rating, String name, String desc) {
+    public Tool(String name, String desc, String userID) {
         this.name = name;
         this.desc = desc;
         this.docID = "No docID yet";
-        this.userID = "No userID yet";
+        this.userID = userID;
+        this.isAval = true;
+        this.outUID = "no outUID yet";
     }
 
 
@@ -30,6 +37,8 @@ public class Tool implements Parcelable {
         desc = "No desc";
         this.docID = "No docID yet";
         this.userID = "No userID yet";
+        this.isAval = true;
+        this.outUID = null;
     }
 
     /** This is a "constructor" of sorts that is needed with the Parceable interface to
@@ -45,6 +54,8 @@ public class Tool implements Parcelable {
         desc = parcel.readString();
         docID = parcel.readString();
         userID = parcel.readString();
+        isAval = parcel.readBoolean();
+        outUID = parcel.readString();
     }
 
     /**
@@ -61,7 +72,8 @@ public class Tool implements Parcelable {
         dest.writeString(desc);
         dest.writeString(docID);
         dest.writeString(userID);
-
+        dest.writeBoolean(isAval);
+        dest.writeString(outUID);
     }
 
 

@@ -19,6 +19,7 @@
         app:srcCompat="@drawable/easytools" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/TitleBackpack"
         android:layout_width="145dp"
         android:layout_height="63dp"

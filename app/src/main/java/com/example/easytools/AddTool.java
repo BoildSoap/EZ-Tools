@@ -34,6 +34,7 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
         toolName = findViewById(R.id.memNameEditText);
         toolDesc = findViewById(R.id.memoryDescEditText);
 
+
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -47,38 +48,16 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
     public void addToolButtonClicked(View view) {
         String name = toolName.getText().toString();
         String desc = toolDesc.getText().toString();
+        String myUid = SignUpLoginActivity.firebaseHelper.getmAuth().getUid();
 
+        /*
+        The code is adding, however it isn't saving the UID.  Check the code in Tool constructor
+        and also check the code when teh docID is being saved.
+         */
 
-        //*** If you only have numbers in your string array, then don't include this part! *** //
+        Tool t = new Tool(name, desc, myUid);
 
-        //*** IF you have String text in your string array, then use a loop such as this ***//
-
-        // This loop take the option they clicked on and ensure it is a number.
-        // My options went from 5 to 1, so that is why I have it adjusted with 6-i
-        // I also had an instruction statement as my first line in my string array
-        // ADJUST THIS LOOP TO MATCH YOUR CODE!
-
-
-
-
-
-        // Note the syntax here for how to access an index of a string array within java
-        for (int i = 0; i < 6; i++) {
-            if (spinnerSelectedText.equals(getResources().getStringArray(R.array.toolsList)[i])) {
-                memoryRatingNum = 6-i;
-                break;
-            }
-        }
-
-        ////////BRING BACK ^^^^^ ONCE ADDED ARRAY
-
-
-
-
-        // Everyone needs this part below this comment
-
-        Tool m = new Tool(memoryRatingNum, name, desc);
-        SignUpLoginActivity.firebaseHelper.addData(m);
+        SignUpLoginActivity.firebaseHelper.addData(t);
 
         toolName.setText("");
         toolDesc.setText("");

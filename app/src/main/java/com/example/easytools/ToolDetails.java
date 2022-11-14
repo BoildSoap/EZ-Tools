@@ -12,6 +12,7 @@ public class ToolDetails extends AppCompatActivity {
     int memoryRatingNum;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +34,8 @@ public class ToolDetails extends AppCompatActivity {
 
         // Everyone needs this part below this comment
 
-        Tool m = new Tool(memoryRatingNum, memName, memDesc);
-        SignUpLoginActivity.firebaseHelper.addData(m);
+//        Tool m = new Tool(memoryRatingNum, memName, memDesc);
+//        SignUpLoginActivity.firebaseHelper.addData(m);
 
         toolName.setText("");
         toolDesc.setText("");

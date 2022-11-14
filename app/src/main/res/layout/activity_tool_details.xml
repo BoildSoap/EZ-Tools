@@ -7,6 +7,7 @@
     tools:context=".ToolDetails">
 
     <EditText
+        android:textColorHint="@color/white"
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +19,7 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <EditText
+        android:textColorHint="@color/white"
         android:id="@+id/rentduration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +32,7 @@
         app:layout_constraintVertical_bias="0.561" />
 
     <EditText
+        android:textColorHint="@color/white"
         android:id="@+id/city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +45,7 @@
         app:layout_constraintVertical_bias="0.416" />
 
     <Button
+
         android:id="@+id/loantoolbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

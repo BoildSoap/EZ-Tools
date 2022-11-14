@@ -7,6 +7,7 @@
     tools:context=".AddTool">
 
     <EditText
+        android:textColorHint="@color/white"
         android:id="@+id/memoryDescEditText"
         android:layout_width="346dp"
         android:layout_height="117dp"
@@ -26,6 +27,7 @@
 
 
     <TextView
+
         android:id="@+id/titlemem"
         android:layout_width="324dp"
         android:layout_height="76dp"
@@ -42,6 +44,7 @@
 
 
     <EditText
+        android:textColorHint="@color/white"
         android:id="@+id/memNameEditText"
         android:layout_width="371dp"
         android:layout_height="72dp"
@@ -59,8 +62,8 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="addMemoryButtonClicked"
-        android:text="Button"
+        android:onClick="addToolButtonClicked"
+        android:text="Add Tool"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
