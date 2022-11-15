@@ -7,13 +7,17 @@
     tools:context=".AddTool">
 
     <EditText
+        android:outlineAmbientShadowColor="@color/white"
+        android:selectAllOnFocus="false"
+        android:shadowColor="@color/white"
+        android:singleLine="false"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:id="@+id/memoryDescEditText"
         android:layout_width="346dp"
         android:layout_height="117dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:singleLine="false"
         android:hint="Description"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
