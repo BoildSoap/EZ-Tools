@@ -111,6 +111,33 @@ public class Tool implements Parcelable {
         return 0;
     }
 
+    public String toString() {
+        return name + " " + userID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public boolean isAval() {
+        return isAval;
+    }
+
+    public void setAval(boolean aval) {
+        isAval = aval;
+    }
+
+    public String getOutUID() {
+        return outUID;
+    }
+
+    public void setOutUID(String outUID) {
+        this.outUID = outUID;
+    }
 
     public String getName() {
         return name;

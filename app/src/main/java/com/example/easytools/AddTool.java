@@ -2,6 +2,7 @@ package com.example.easytools;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -56,7 +57,7 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
          */
 
         Tool t = new Tool(name, desc, myUid);
-
+        Log.d("Denna", "" + t.toString());
         SignUpLoginActivity.firebaseHelper.addData(t);
 
         toolName.setText("");
