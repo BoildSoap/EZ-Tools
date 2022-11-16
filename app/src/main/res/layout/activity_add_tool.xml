@@ -6,29 +6,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".AddTool">
 
+
     <EditText
+        android:id="@+id/memoryDescEditText"
+        android:layout_width="346dp"
+        android:layout_height="117dp"
+        android:ellipsize="none"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
         android:outlineAmbientShadowColor="@color/white"
+        android:scrollHorizontally="false"
         android:selectAllOnFocus="false"
         android:shadowColor="@color/white"
         android:singleLine="false"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:id="@+id/memoryDescEditText"
-        android:layout_width="346dp"
-        android:layout_height="117dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Description"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485"
-        android:ellipsize="none"
-        android:scrollHorizontally="false"/>
-
+        app:layout_constraintVertical_bias="0.381" />
 
     <TextView
 
@@ -45,7 +45,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.038" />
-
 
     <EditText
         android:id="@+id/memNameEditText"
@@ -65,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.229" />
 
     <Button
         android:id="@+id/button3"
