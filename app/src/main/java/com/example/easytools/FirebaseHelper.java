@@ -85,6 +85,7 @@ public class FirebaseHelper {
                 @Override
                 public void onCallback(ArrayList<Tool> memoryList) {
                     Log.d(TAG, "Inside attachReadDataToUser, onCallback " + memoryList.toString());
+
                 }
             });
         }
@@ -149,9 +150,10 @@ public class FirebaseHelper {
     }
 
 
+    public ArrayList<Tool> getMyTools() {
+}
     public ArrayList<Tool> getToolArrayList() {
-        return myTools;
-    }
+}
 
 
 
@@ -164,7 +166,8 @@ certain things from occurring until after the onSuccess is finished.
 
     private void readData(FirestoreCallback firestoreCallback) {
         myTools.clear();        // empties the AL so that it can get a fresh copy of data
-        db.collection("users").document(uid).collection("allTools")
+
+        db.collection("allTools")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -206,7 +209,9 @@ certain things from occurring until after the onSuccess is finished.
 
     private void editData(Tool m, FirestoreCallback firestoreCallback) {
         String docId = m.getDocID();
-        db.collection("users").document(uid).collection("allTools")
+
+        db.collection("allTools")
+
                 .document(docId)
                 .set(m)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

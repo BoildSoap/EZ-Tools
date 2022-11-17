@@ -24,10 +24,15 @@ public class backpack extends AppCompatActivity {
         // find listView in xml
         myToolListView = findViewById(R.id.allToolsListView);
         // get ArrayList of data from firebase
+
+        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMyTools();
+
         Log.d("Praneet", "onCreate: array list is " + SignUpLoginActivity.firebaseHelper.getToolArrayList());
         ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getToolArrayList();
+
         // bind data to the ArrayAdapter (this is a default adapter
         // The text shown is based on the Memory class toString
+        Log.d("praneet", "the ArrayList of tools should be : " + myList);
         ArrayAdapter<Tool> listAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, myList);
         // attaches the listAdapter to my listView

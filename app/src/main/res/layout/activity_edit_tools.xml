@@ -21,16 +21,17 @@
 
     <EditText
         android:id="@+id/memoryDescTV"
-        android:layout_width="300dp"
-        android:layout_height="120dp"
-        android:text="Memory Description"
-        android:gravity="center"
-        android:background="@color/spinnerColor"
+        android:layout_width="745dp"
+        android:layout_height="43dp"
         android:layout_marginTop="@dimen/margin"
+        android:gravity="center"
+        android:text="Memory Description"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoryNameTV" />
+        app:layout_constraintTop_toBottomOf="@+id/memoryNameTV"
+        app:layout_constraintVertical_bias="0.04" />
 
     <Button
         android:id="@+id/editMemoryButton"
@@ -48,7 +49,7 @@
         android:id="@+id/deleteMemoryButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Delete Memory"
+        android:text="Stop Lending Tool"
         android:onClick="deleteMemory"
         app:layout_constraintTop_toBottomOf="@+id/editMemoryButton"
         android:layout_marginTop="@dimen/margin"
