@@ -13,8 +13,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class backpack extends AppCompatActivity {
-    private ListView myMemoryListView;
-    public static final String CHOSEN_MEMORY = "chosen memory";
+    private ListView myToolListView;
+    public static final String CHOSEN_TOOL = "chosen tool";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,27 +22,32 @@ public class backpack extends AppCompatActivity {
         setContentView(R.layout.activity_backpack);
 
         // find listView in xml
-        myMemoryListView = findViewById(R.id.toolList);
+        myToolListView = findViewById(R.id.allToolsListView);
         // get ArrayList of data from firebase
+
         ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMyTools();
+
+        Log.d("Praneet", "onCreate: array list is " + SignUpLoginActivity.firebaseHelper.getToolArrayList());
+        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getToolArrayList();
+
         // bind data to the ArrayAdapter (this is a default adapter
         // The text shown is based on the Memory class toString
         Log.d("praneet", "the ArrayList of tools should be : " + myList);
         ArrayAdapter<Tool> listAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, myList);
         // attaches the listAdapter to my listView
-        myMemoryListView.setAdapter(listAdapter);
+        myToolListView.setAdapter(listAdapter);
         // if did custom array set up, use this one
 
         // Create listener to listen for when a Food from the specific Category list is clicked on
-        myMemoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        myToolListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // Creates an intent to go from the Specific Category to the specific Detail
                 Intent intent = new Intent(backpack.this, EditTools.class);
                 // Sends the specific object at index i to the Detail activity
                 // In this case, it is sending the particular Food object
-                intent.putExtra(CHOSEN_MEMORY, myList.get(position));
+                intent.putExtra(CHOSEN_TOOL, myList.get(position));
                 startActivity(intent);
             }
         });
