@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,9 +24,10 @@ public class backpack extends AppCompatActivity {
         // find listView in xml
         myMemoryListView = findViewById(R.id.toolList);
         // get ArrayList of data from firebase
-        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMemoryArrayList();
+        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMyTools();
         // bind data to the ArrayAdapter (this is a default adapter
         // The text shown is based on the Memory class toString
+        Log.d("praneet", "the ArrayList of tools should be : " + myList);
         ArrayAdapter<Tool> listAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, myList);
         // attaches the listAdapter to my listView
