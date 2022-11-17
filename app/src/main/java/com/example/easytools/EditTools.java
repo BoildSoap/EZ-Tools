@@ -25,7 +25,7 @@ public class EditTools extends AppCompatActivity {
         // gets intent from ViewAllMemoriesActivity and retrieves the selected Memory
         // the viewer wanted to see.
         Intent intent = getIntent();
-        currentMemory = intent.getParcelableExtra(backpack.CHOSEN_MEMORY);
+        currentMemory = intent.getParcelableExtra(backpack.CHOSEN_TOOL);
         // Sets the name and desc from the chosen memory
         // Right now I don't have any options to edit the rating.
         nameET.setText(currentMemory.getName());

@@ -115,10 +115,10 @@ public class FirebaseHelper {
                 });
     }
 
-    public void addData(Tool m) {
+    public void addData(Tool t) {
         // add Memory m to the database
         // this method is overloaded and incorporates the interface to handle the asynch calls
-        addData(m, new FirestoreCallback() {
+        addData(t, new FirestoreCallback() {
             @Override
             public void onCallback(ArrayList<Tool> myList) {
                 Log.i(TAG, "Inside addData, onCallback :" + myTools.toString());
@@ -149,7 +149,7 @@ public class FirebaseHelper {
     }
 
 
-    public ArrayList<Tool> getMemoryArrayList() {
+    public ArrayList<Tool> getToolArrayList() {
         return myTools;
     }
 
@@ -164,15 +164,17 @@ certain things from occurring until after the onSuccess is finished.
 
     private void readData(FirestoreCallback firestoreCallback) {
         myTools.clear();        // empties the AL so that it can get a fresh copy of data
-        db.collection("users").document(uid).collection("myMemoryList")
+        db.collection("users").document(uid).collection("allTools")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot doc: task.getResult()) {
-                                Tool memory = doc.toObject(Tool.class);
-                                myTools.add(memory);
+                                Tool tool = doc.toObject(Tool.class);
+                                Log.i(TAG, "the document is : "+ doc);
+
+                                myTools.add(tool);
                             }
 
                             Log.i(TAG, "Success reading data: "+ myTools.toString());
@@ -204,7 +206,7 @@ certain things from occurring until after the onSuccess is finished.
 
     private void editData(Tool m, FirestoreCallback firestoreCallback) {
         String docId = m.getDocID();
-        db.collection("users").document(uid).collection("myMemoryList")
+        db.collection("users").document(uid).collection("allTools")
                 .document(docId)
                 .set(m)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -237,7 +239,7 @@ certain things from occurring until after the onSuccess is finished.
     private void deleteData(Tool m, FirestoreCallback firestoreCallback) {
         // delete item w from database
         String docId = m.getDocID();
-        db.collection("users").document(uid).collection("myMemoryList")
+        db.collection("users").document(uid).collection("allTools")
                 .document(docId)
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
