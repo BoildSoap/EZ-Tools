@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:outlineAmbientShadowColor="#FFFFFF"
     android:outlineSpotShadowColor="#FFFFFF"
-    tools:context=".backpack">
+    tools:context=".backpack"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/imageView3"
