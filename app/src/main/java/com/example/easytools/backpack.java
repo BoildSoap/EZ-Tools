@@ -25,7 +25,6 @@ public class backpack extends AppCompatActivity {
         myToolListView = findViewById(R.id.allToolsListView);
         // get ArrayList of data from firebase
 
-        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMyTools();
 
         Log.d("Praneet", "onCreate: array list is " + SignUpLoginActivity.firebaseHelper.getToolArrayList());
         ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getToolArrayList();

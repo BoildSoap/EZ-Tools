@@ -150,10 +150,9 @@ public class FirebaseHelper {
     }
 
 
-    public ArrayList<Tool> getMyTools() {
-}
     public ArrayList<Tool> getToolArrayList() {
-}
+        return myTools;
+    }
 
 
 
