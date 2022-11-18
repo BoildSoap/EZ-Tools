@@ -27,7 +27,7 @@ public class backpack extends AppCompatActivity {
 
 
         Log.d("Praneet", "onCreate: array list is " + SignUpLoginActivity.firebaseHelper.getToolArrayList());
-        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getToolArrayList();
+        ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMyTools();
 
         // bind data to the ArrayAdapter (this is a default adapter
         // The text shown is based on the Memory class toString

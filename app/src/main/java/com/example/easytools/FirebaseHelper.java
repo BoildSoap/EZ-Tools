@@ -149,11 +149,25 @@ public class FirebaseHelper {
                 });
     }
 
-
+// This returns ALL tools
     public ArrayList<Tool> getToolArrayList() {
         return myTools;
     }
 
+    public ArrayList<Tool> getMyTools(){
+        Log.d(TAG, "Inside getmytools and myTools size is " + myTools.size());
+        Log.d(TAG, uid);
+        ArrayList<Tool> myBackpack = new  ArrayList<>();
+        for(Tool t: myTools){
+            Log.d(TAG, t.getUserID() + " " + uid);
+            if(t.getUserID().equals(uid)){
+                myBackpack.add(t);
+                Log.d(TAG, "added " +t.toString()+" to myTools");
+            }
+
+        }
+        return myBackpack;
+    }
 
 
 /* https://www.youtube.com/watch?v=0ofkvm97i0s
