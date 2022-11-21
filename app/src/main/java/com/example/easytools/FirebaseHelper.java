@@ -254,16 +254,16 @@ certain things from occurring until after the onSuccess is finished.
 
     }
 
-    private void deleteData(Tool m, FirestoreCallback firestoreCallback) {
+    private void deleteData(Tool tool, FirestoreCallback firestoreCallback) {
         // delete item w from database
-        String docId = m.getDocID();
-        db.collection("users").document(uid).collection("allTools")
+        String docId = tool.getDocID();
+        db.collection("allTools").document(uid).collection("allTools")
                 .document(docId)
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Log.i(TAG, m.getName() + " successfully deleted");
+                        Log.i(TAG, tool.getName() + " successfully deleted");
                         readData(firestoreCallback);
                     }
                 })
