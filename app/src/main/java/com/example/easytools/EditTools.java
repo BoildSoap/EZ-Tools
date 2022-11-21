@@ -12,41 +12,41 @@ public class EditTools extends AppCompatActivity {
 
     public final String TAG = "Denna";
     EditText nameET, descET;
-    Tool currentMemory;
+    Tool currentTool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_tools);
 
-        nameET = findViewById(R.id.memoryNameTV);
-        descET = findViewById(R.id.memoryDescTV);
+        nameET = findViewById(R.id.toolNameTV);
+        descET = findViewById(R.id.toolDescTV);
 
         // gets intent from ViewAllMemoriesActivity and retrieves the selected Memory
         // the viewer wanted to see.
         Intent intent = getIntent();
-        currentMemory = intent.getParcelableExtra(backpack.CHOSEN_TOOL);
+        currentTool = intent.getParcelableExtra(backpack.CHOSEN_TOOL);
         // Sets the name and desc from the chosen memory
         // Right now I don't have any options to edit the rating.
-        nameET.setText(currentMemory.getName());
-        descET.setText(currentMemory.getDesc());
+        nameET.setText(currentTool.getName());
+        descET.setText(currentTool.getDesc());
     }
 
 
-    public void saveMemoryEdits(View v) {
+    public void saveToolEdits(View v) {
         Log.d(TAG, "inside saveMemoryEdits method");
         // updates the currentMemory object to have the same name/desc that are on the screen
         // in the event of changes made.
-        currentMemory.setName(nameET.getText().toString());
-        currentMemory.setDesc(descET.getText().toString());
+        currentTool.setName(nameET.getText().toString());
+        currentTool.setDesc(descET.getText().toString());
 
         // Calls editData with this updated Memory object
-        SignUpLoginActivity.firebaseHelper.editData(currentMemory);
+        SignUpLoginActivity.firebaseHelper.editData(currentTool);
     }
 
-    public void deleteMemory(View v) {
-        Log.d(TAG, "deleting memory " + currentMemory.getName());
-        SignUpLoginActivity.firebaseHelper.deleteData(currentMemory);
+    public void deleteTool(View v) {
+        Log.d(TAG, "deleting tool " + currentTool.getName());
+        SignUpLoginActivity.firebaseHelper.deleteData(currentTool);
     }
 
     public void goBack(View v) {

@@ -8,7 +8,7 @@
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/memoryNameTV"
+        android:id="@+id/toolNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginFromTop"
@@ -20,7 +20,7 @@
 
 
     <EditText
-        android:id="@+id/memoryDescTV"
+        android:id="@+id/toolDescTV"
         android:layout_width="745dp"
         android:layout_height="43dp"
         android:layout_marginTop="@dimen/margin"
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoryNameTV"
+        app:layout_constraintTop_toBottomOf="@+id/toolNameTV"
         app:layout_constraintVertical_bias="0.04" />
 
     <Button
@@ -38,19 +38,19 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Save Edits"
-        android:onClick="saveMemoryEdits"
+        android:onClick="saveToolEdits"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginBottom="@dimen/margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoryDescTV" />
+        app:layout_constraintTop_toBottomOf="@+id/toolDescTV" />
 
     <Button
         android:id="@+id/deleteMemoryButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Stop Lending Tool"
-        android:onClick="deleteMemory"
+        android:onClick="deleteTool"
         app:layout_constraintTop_toBottomOf="@+id/editMemoryButton"
         android:layout_marginTop="@dimen/margin"
         app:layout_constraintEnd_toEndOf="parent"
