@@ -1,6 +1,8 @@
 package com.example.easytools;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,17 +15,17 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class backpack extends AppCompatActivity {
-    private ListView myToolListView;
+    private ListView listView;
     public static final String CHOSEN_TOOL = "chosen tool";
-
+    public String myUserName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_backpack);
 
         // find listView in xml
-        myToolListView = findViewById(R.id.allToolsListView);
         // get ArrayList of data from firebase
+
 
 
         ArrayList<Tool> myList = SignUpLoginActivity.firebaseHelper.getMyTools();
@@ -34,11 +36,17 @@ public class backpack extends AppCompatActivity {
         ArrayAdapter<Tool> listAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, myList);
         // attaches the listAdapter to my listView
-        myToolListView.setAdapter(listAdapter);
+        toolAdapter myToolAdapter = new toolAdapter(this, myList);
+
+
+        // This finds the listView and then adds the adapter to bind the data to this view
+        ListView listView = (ListView) findViewById(R.id.allToolsListView);
+
+        listView.setAdapter(myToolAdapter);
         // if did custom array set up, use this one
 
         // Create listener to listen for when a Food from the specific Category list is clicked on
-        myToolListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // Creates an intent to go from the Specific Category to the specific Detail

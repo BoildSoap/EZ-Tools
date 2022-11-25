@@ -1,39 +1,23 @@
 package com.example.easytools;
 
 
-import static androidx.core.content.ContextCompat.startActivity;
-
-import android.app.Activity;
-import android.app.Application;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
 
 /**
  * The purpose of this class is to hold ALL the code to communicate with Firebase.  This class
@@ -50,6 +34,8 @@ public class FirebaseHelper {
     private final FirebaseAuth mAuth;
     private final FirebaseFirestore db;
     private final ArrayList<Tool> myTools;
+    private final ArrayList<RealUser> allUsers;
+
     // we don't need this yet
     // private ArrayList<Memory> myItems = new ArrayList<>();
 
@@ -58,6 +44,7 @@ public class FirebaseHelper {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         myTools = new ArrayList<>();
+        allUsers = new ArrayList<>();
 
     }
 
@@ -94,6 +81,7 @@ public class FirebaseHelper {
         }
     }
 
+
     //creating a user object so we can add it to firestore
     public void addUserToFirestore(String name, String newUID) {
         // Create a new user with their name
@@ -114,7 +102,9 @@ public class FirebaseHelper {
                         Log.w(TAG, "Error adding user account", e);
                     }
                 });
+
     }
+
 
     public void addData(Tool t) {
         // add Memory m to the database
@@ -154,6 +144,9 @@ public class FirebaseHelper {
         return myTools;
     }
 
+    public ArrayList<RealUser> getUserArrayList() {
+        return allUsers;
+    }
     public ArrayList<Tool> getMyTools(){
         Log.d(TAG, "Inside getmytools and myTools size is " + myTools.size());
         Log.d(TAG, uid);
@@ -169,13 +162,55 @@ public class FirebaseHelper {
         return myBackpack;
     }
 
-
 /* https://www.youtube.com/watch?v=0ofkvm97i0s
 This video is good!!!   Basically he talks about what it means for tasks to be asynchronous
 and how you can create an interface and then using that interface pass an object of the interface
 type from a callback method and access it after the callback method.  It also allows you to delay
 certain things from occurring until after the onSuccess is finished.
 */
+
+    private void readDataUsers(FirestoreCallback firestoreCallback) {
+        allUsers.clear();        // empties the AL so that it can get a fresh copy of data
+
+        db.collection("users")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot doc: task.getResult()) {
+                                RealUser oneUser = doc.toObject(RealUser.class);
+                                Log.i(TAG, "the document is : "+ doc);
+
+                                allUsers.add(oneUser);
+                            }
+
+                            Log.i(TAG, "Success reading data: "+ allUsers.toString());
+                            firestoreCallback.onCallback(myTools);
+                        }
+                        else {
+                            Log.d(TAG, "Error getting documents: " + task.getException());
+                        }
+                    }
+                });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void readData(FirestoreCallback firestoreCallback) {
         myTools.clear();        // empties the AL so that it can get a fresh copy of data

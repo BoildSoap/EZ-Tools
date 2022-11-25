@@ -21,7 +21,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
     EditText userNameET, passwordET;
 
     // values to pass to firebase auth for log in/sign up
-    String userName, password;
+     String userName, password;
 
     // this variable will be used for communicating with Firebase auth and firestore db
     public static FirebaseHelper firebaseHelper;
@@ -39,12 +39,14 @@ public class SignUpLoginActivity extends AppCompatActivity  {
         signUpB = findViewById(R.id.signUpButton);
         userNameET = findViewById(R.id.userNameEditText);
         passwordET = findViewById(R.id.passwordEditText);
+
     }
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         updateUI();
+
     }
 
     /**
@@ -68,6 +70,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
 
     public void signUpClicked(View view) {
         Log.i(TAG, "Sign up clicked");
+
         if (getValues()) {      // get username and password
             // Try to create an account using auth
             firebaseHelper.getmAuth().createUserWithEmailAndPassword(userName, password)
@@ -225,6 +228,7 @@ public class SignUpLoginActivity extends AppCompatActivity  {
      *
      * @return true if values pass these tests, false otherwise
      */
+
     private boolean getValues() {
         userName = userNameET.getText().toString();
         password = passwordET.getText().toString();

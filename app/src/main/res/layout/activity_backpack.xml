@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:outlineAmbientShadowColor="#FFFFFF"
     android:outlineSpotShadowColor="#FFFFFF"
-    tools:context=".backpack"
-    android:background="@color/white">
+    tools:context=".backpack">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -38,16 +37,16 @@
 
     <ListView
         android:id="@+id/allToolsListView"
-        android:textColor="#ffffff"
-        android:layout_width="409dp"
-        android:layout_height="468dp"
+        android:layout_width="361dp"
+        android:layout_height="460dp"
         android:cacheColorHint="@color/white"
         android:outlineAmbientShadowColor="@color/white"
         android:outlineSpotShadowColor="#FFFFFF"
+        android:textColor="#ffffff"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleBackpack" />
+        app:layout_constraintTop_toBottomOf="@+id/TitleBackpack"
+        app:layout_constraintVertical_bias="0.7" />
 </androidx.constraintlayout.widget.ConstraintLayout>
