@@ -21,8 +21,14 @@ public class toolAdapter extends ArrayAdapter<Tool> {
         }
         TextView tvToolName = (TextView) convertView.findViewById(R.id.toolName);
         TextView tvOwnerEmail = (TextView) convertView.findViewById(R.id.ownerEmail);
+        TextView tvAval = (TextView) convertView.findViewById(R.id.tvAval);
         tvToolName.setText(myTool.getName());
         tvOwnerEmail.setText(myTool.getMyUserName());
+        if(myTool.isAval()==true) {
+            tvAval.setText("Available!");
+        }else{
+            tvAval.setText("Not Available!");
+        }
         return convertView;
     }
 }
