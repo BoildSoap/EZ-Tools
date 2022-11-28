@@ -9,6 +9,7 @@
     tools:context=".backpack">
 
     <ImageView
+        android:onClick="goHome"
         android:id="@+id/imageView3"
         android:layout_width="176dp"
         android:layout_height="160dp"

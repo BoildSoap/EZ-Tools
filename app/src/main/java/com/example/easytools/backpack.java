@@ -59,7 +59,10 @@ public class backpack extends AppCompatActivity {
         });
 
     }
-
+    public void goHome(View view) {
+        Intent intent = new Intent(backpack.this, homepage.class);
+        startActivity(intent);
+    }
     public void goToSelectOptions(View view) {
         Intent intent = new Intent(backpack.this, SelectAction.class);
         startActivity(intent);

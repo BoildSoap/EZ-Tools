@@ -31,7 +31,10 @@ public class EditTools extends AppCompatActivity {
         nameET.setText(currentTool.getName());
         descET.setText(currentTool.getDesc());
     }
-
+    public void goHome(View view) {
+        Intent intent = new Intent(EditTools.this, homepage.class);
+        startActivity(intent);
+    }
 
     public void saveToolEdits(View v) {
         Log.d(TAG, "inside saveMemoryEdits method");

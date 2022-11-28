@@ -10,6 +10,7 @@
     tools:context=".BorrowTool">
 
 <ImageView
+    android:onClick="goHome"
     android:id="@+id/imageView3"
     android:layout_width="176dp"
     android:layout_height="160dp"
@@ -22,6 +23,7 @@
     app:srcCompat="@drawable/easytools" />
 
 <TextView
+    android:textColor="@color/white"
     android:id="@+id/TitleBackpack"
     android:layout_width="145dp"
     android:layout_height="63dp"

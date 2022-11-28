@@ -51,7 +51,10 @@ public class BorrowTool extends AppCompatActivity {
         });
 
     }
-
+    public void goHome(View view) {
+        Intent intent = new Intent(BorrowTool.this, homepage.class);
+        startActivity(intent);
+    }
     public void goToSelectOptions(View view) {
         Intent intent = new Intent(BorrowTool.this, SelectAction.class);
         startActivity(intent);

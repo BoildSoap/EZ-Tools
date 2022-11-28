@@ -1,6 +1,7 @@
 package com.example.easytools;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,6 +65,13 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
         toolDesc.setText("");
     }
 
-
+    public void goHome(View view) {
+        Intent intent = new Intent(AddTool.this, homepage.class);
+        startActivity(intent);
+    }
+    public void goBack(View view) {
+        Intent intent = new Intent(AddTool.this, backpack.class);
+        startActivity(intent);
+    }
 }
 

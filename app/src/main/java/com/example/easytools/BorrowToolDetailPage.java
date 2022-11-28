@@ -32,22 +32,13 @@ public class BorrowToolDetailPage extends AppCompatActivity {
         nameET.setText(currentTool.getName());
         descET.setText(currentTool.getDesc());
     }
-
-
-    public void saveToolEdits(View v) {
-        Log.d(TAG, "inside saveMemoryEdits method");
-        // updates the currentMemory object to have the same name/desc that are on the screen
-        // in the event of changes made.
-        currentTool.setName(nameET.getText().toString());
-        currentTool.setDesc(descET.getText().toString());
-
-        // Calls editData with this updated Memory object
-        SignUpLoginActivity.firebaseHelper.editData(currentTool);
+    public void updateAvailability(View v) {
+        Log.d(TAG, "updating aval tool " + currentTool.getName());
+        SignUpLoginActivity.firebaseHelper.updateAval(currentTool);
     }
-
-    public void deleteTool(View v) {
-        Log.d(TAG, "deleting tool " + currentTool.getName());
-        SignUpLoginActivity.firebaseHelper.deleteData(currentTool);
+    public void goHome(View view) {
+        Intent intent = new Intent(BorrowToolDetailPage.this, homepage.class);
+        startActivity(intent);
     }
 
     public void goBack(View v) {

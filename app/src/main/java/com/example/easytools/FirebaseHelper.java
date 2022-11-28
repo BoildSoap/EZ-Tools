@@ -194,13 +194,10 @@ certain things from occurring until after the onSuccess is finished.
                     }
                 });
     }
-    public void updateAval(Tool m, FirestoreCallback firestoreCallback){
+    void updateAval(Tool m){
         String docId = m.getDocID();
 
-        DocumentReference washingtonRef = db.collection("allTools").document(docId);
-
-// Set the "isCapital" field of the city 'DC'
-        washingtonRef
+        db.collection("allTools").document(docId)
                 .update("aval", false)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -241,6 +238,7 @@ certain things from occurring until after the onSuccess is finished.
                     }
                 });
     }
+
 
 
     //https://stackoverflow.com/questions/48499310/how-to-return-a-documentsnapshot-as-a-result-of-a-method/48500679#48500679

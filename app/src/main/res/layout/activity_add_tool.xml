@@ -1,55 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".AddTool">
 
 
-    <EditText
-        android:id="@+id/memoryDescEditText"
-        android:layout_width="346dp"
-        android:layout_height="117dp"
-        android:ellipsize="none"
-        android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        android:outlineAmbientShadowColor="@color/white"
-        android:scrollHorizontally="false"
-        android:selectAllOnFocus="false"
-        android:shadowColor="@color/white"
-        android:singleLine="false"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="176dp"
+        android:layout_height="160dp"
+        android:onClick="goHome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@drawable/easytools" />
 
     <TextView
-
         android:id="@+id/titlemem"
         android:layout_width="324dp"
         android:layout_height="76dp"
         android:gravity="center_horizontal"
-        android:text="LEND TOOL"
+        android:text="Lend Tool"
         android:textColor="@color/white"
-        android:textSize="43dp"
+        android:textSize="@dimen/textHeight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.334" />
 
     <EditText
         android:id="@+id/memNameEditText"
-        android:layout_width="371dp"
-        android:layout_height="72dp"
+        android:layout_width="343dp"
+        android:layout_height="69dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -64,18 +53,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229" />
+        app:layout_constraintVertical_bias="0.41" />
+
+    <EditText
+        android:id="@+id/memoryDescEditText"
+        android:layout_width="308dp"
+        android:layout_height="56dp"
+        android:ellipsize="none"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        android:outlineAmbientShadowColor="@color/white"
+        android:scrollHorizontally="false"
+        android:selectAllOnFocus="false"
+        android:shadowColor="@color/white"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="177dp"
+        android:layout_height="56dp"
         android:onClick="addToolButtonClicked"
         android:text="Add Tool"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
+        app:layout_constraintVertical_bias="0.641" />
+
+    <Button
+        android:id="@+id/backButton2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:onClick="goBack"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="0.161" />
 </androidx.constraintlayout.widget.ConstraintLayout>
