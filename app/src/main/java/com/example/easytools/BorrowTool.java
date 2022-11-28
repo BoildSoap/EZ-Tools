@@ -42,7 +42,7 @@ public class BorrowTool extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // Creates an intent to go from the Specific Category to the specific Detail
-                Intent intent = new Intent(BorrowTool.this, EditTools.class);
+                Intent intent = new Intent(BorrowTool.this, BorrowToolDetailPage.class);
                 // Sends the specific object at index i to the Detail activity
                 // In this case, it is sending the particular Food object
                 intent.putExtra(CHOSEN_TOOL, myList.get(position));

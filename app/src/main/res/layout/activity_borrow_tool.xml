@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:outlineAmbientShadowColor="#FFFFFF"
     android:outlineSpotShadowColor="#FFFFFF"
-    android:background="@color/white"
+
     tools:context=".BorrowTool">
 
 <ImageView

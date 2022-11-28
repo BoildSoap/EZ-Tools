@@ -194,28 +194,32 @@ certain things from occurring until after the onSuccess is finished.
                     }
                 });
     }
+    public void updateAval(Tool m, FirestoreCallback firestoreCallback){
+        String docId = m.getDocID();
 
+        DocumentReference washingtonRef = db.collection("allTools").document(docId);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Set the "isCapital" field of the city 'DC'
+        washingtonRef
+                .update("aval", false)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+    }
     private void readData(FirestoreCallback firestoreCallback) {
         myTools.clear();        // empties the AL so that it can get a fresh copy of data
 
         db.collection("allTools")
+                .whereEqualTo("aval", true)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
