@@ -19,10 +19,10 @@ public class BorrowTool extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_backpack);
+        setContentView(R.layout.activity_borrow_tool);
 
         // find listView in xml
-        myToolListView = findViewById(R.id.allToolsListView);
+        myToolListView = findViewById(R.id.borrowToolListView);
         // get ArrayList of data from firebase
 
 

@@ -9,41 +9,42 @@
 
     tools:context=".BorrowTool">
 
-<ImageView
-    android:onClick="goHome"
-    android:id="@+id/imageView3"
-    android:layout_width="176dp"
-    android:layout_height="160dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.497"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.028"
-    app:srcCompat="@drawable/easytools" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="176dp"
+        android:layout_height="160dp"
+        android:onClick="goHome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@drawable/easytools" />
 
-<TextView
-    android:textColor="@color/white"
-    android:id="@+id/TitleBackpack"
-    android:layout_width="145dp"
-    android:layout_height="63dp"
-    android:gravity="center"
-    android:text="Borrow Tools"
-    android:textSize="@dimen/textHeight"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.498"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.296" />
+    <TextView
+        android:id="@+id/TitleBackpack"
+        android:layout_width="154dp"
+        android:layout_height="94dp"
+        android:gravity="center"
+        android:text="Borrow Tools"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textHeight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
 
-<ListView
-    android:id="@+id/allToolsListView"
-    android:layout_width="409dp"
-    android:layout_height="468dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/TitleBackpack" />
+    <ListView
+        android:id="@+id/borrowToolListView"
+        android:layout_width="361dp"
+        android:layout_height="460dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitleBackpack"
+        app:layout_constraintVertical_bias="0.7" />
 </androidx.constraintlayout.widget.ConstraintLayout>

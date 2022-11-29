@@ -2,7 +2,9 @@ package com.example.easytools;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class RealUser implements Parcelable {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class RealUser extends AppCompatActivity implements Parcelable  {
     private String name;
     private String docID;
 
