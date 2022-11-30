@@ -47,10 +47,11 @@ public class EditTools extends AppCompatActivity {
         SignUpLoginActivity.firebaseHelper.editData(currentTool);
     }
 
-    public void deleteData(View v) {
+    public void changeAval(View v) {
         Log.d(TAG, "deleting tool " + currentTool.getName());
-        SignUpLoginActivity.firebaseHelper.deleteData(currentTool);
+        SignUpLoginActivity.firebaseHelper.updateAval(currentTool);
     }
+
 
     public void goBack(View v) {
         Log.d(TAG, "go back");

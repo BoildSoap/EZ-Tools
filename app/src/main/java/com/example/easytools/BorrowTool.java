@@ -31,10 +31,9 @@ public class BorrowTool extends AppCompatActivity {
         // bind data to the ArrayAdapter (this is a default adapter
         // The text shown is based on the Memory class toString
 
-        ArrayAdapter<Tool> listAdapter = new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, myList);
+        toolAdapter myToolAdapter = new toolAdapter(this, myList);
         // attaches the listAdapter to my listView
-        myToolListView.setAdapter(listAdapter);
+        myToolListView.setAdapter(myToolAdapter);
         // if did custom array set up, use this one
 
         // Create listener to listen for when a Food from the specific Category list is clicked on

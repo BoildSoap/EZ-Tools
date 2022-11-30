@@ -194,7 +194,15 @@ certain things from occurring until after the onSuccess is finished.
                     }
                 });
     }
-    void updateAval(Tool m){
+    public void updateAval(Tool t) {
+        addData(t, new FirestoreCallback() {
+            @Override
+            public void onCallback(ArrayList<Tool> myList) {
+                Log.i(TAG, "Inside updateAval, onCallback :" + myTools.toString());
+            }
+        });
+    }
+    private void updateAval(Tool m, FirestoreCallback firestoreCallback){
         String docId = m.getDocID();
 
         db.collection("allTools").document(docId)
@@ -203,6 +211,7 @@ certain things from occurring until after the onSuccess is finished.
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG, "DocumentSnapshot successfully updated!");
+                        readData(firestoreCallback);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
