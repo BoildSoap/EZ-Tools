@@ -58,7 +58,13 @@ public class FirebaseHelper {
         mAuth.signOut();
         uid = null;
     }
+    public String getCurrUID(){
+        return mAuth.getCurrentUser().getUid();
+    }
+    public String ownerEmail(){
+        return mAuth.getCurrentUser().getDisplayName();
 
+    }
     //
     public void updateUid(String uid) {
         FirebaseHelper.uid = uid;
@@ -186,7 +192,7 @@ certain things from occurring until after the onSuccess is finished.
                             }
 
                             Log.i(TAG, "Success reading data: "+ allUsers.toString());
-                            firestoreCallback.onCallback(myTools);
+                            firestoreCallback.onCallback(allUsers);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());
