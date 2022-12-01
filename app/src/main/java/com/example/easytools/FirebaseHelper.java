@@ -58,13 +58,7 @@ public class FirebaseHelper {
         mAuth.signOut();
         uid = null;
     }
-    public String getCurrUID(){
-        return mAuth.getCurrentUser().getUid();
-    }
-    public String ownerEmail(){
-        return mAuth.getCurrentUser().getDisplayName();
 
-    }
     //
     public void updateUid(String uid) {
         FirebaseHelper.uid = uid;

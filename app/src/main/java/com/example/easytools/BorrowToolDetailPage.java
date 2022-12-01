@@ -34,8 +34,6 @@ public class BorrowToolDetailPage extends AppCompatActivity {
     }
     public void updateAvailability(View v) {
         Log.d(TAG, "updating aval tool " + currentTool.getName());
-        currentTool.setOutUID(SignUpLoginActivity.firebaseHelper.getCurrUID());
-
         SignUpLoginActivity.firebaseHelper.updateAval(currentTool);
     }
     public void goHome(View view) {

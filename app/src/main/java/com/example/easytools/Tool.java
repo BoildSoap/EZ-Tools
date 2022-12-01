@@ -11,29 +11,27 @@ public class Tool implements Parcelable {
     private String userID;
     boolean isAval;
     private String outUID;
-    private String ownerEmail;
+    private String myUserName;
 
     // add boolean for status
     // add user id for checked out
 
-    public Tool(String name, String desc, String docID,String userID, String outUID,String ownerEmail) {
+    public Tool(String name, String desc, String docID,String userID, String outUID) {
         this.name = name;
         this.desc = desc;
         this.docID = docID;
         this.userID = userID;
         this.isAval = true;
-        this.outUID = outUID; // ""
+        this.outUID = outUID;
     }
 
-    public Tool(String name, String desc, String userID,String ownerEmail) {
+    public Tool(String name, String desc, String userID) {
         this.name = name;
         this.desc = desc;
         this.docID = "No docID yet";
         this.userID = userID;
         this.isAval = true;
         this.outUID = "no outUID yet";
-        this.ownerEmail = ownerEmail;
-
     }
 
 
@@ -116,12 +114,10 @@ public class Tool implements Parcelable {
      */
     public String getMyUserName(){
         ArrayList<RealUser> myList = SignUpLoginActivity.firebaseHelper.getUserArrayList();
-
         String myUserName = "";
         for(RealUser u: myList){
             if(u.getDocID().equals(this.getUserID())){
                 myUserName = u.getName();
-                Log.i("Anirudh", myUserName);
             }
 
         }

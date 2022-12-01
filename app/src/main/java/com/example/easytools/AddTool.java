@@ -57,7 +57,12 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
         and also check the code when teh docID is being saved.
          */
 
+<<<<<<< HEAD
         Tool t = new Tool(name, desc, email);
+=======
+        Tool t = new Tool(name, desc, myUid);
+        Log.d("Denna", "" + t.toString());
+>>>>>>> parent of e664fe9 (Merge branch 'backpack-code-' of https://github.com/BoildSoap/EZ-Tools into backpack-code-)
         SignUpLoginActivity.firebaseHelper.addData(t);
 
         toolName.setText("");
