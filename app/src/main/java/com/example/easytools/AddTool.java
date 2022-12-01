@@ -50,14 +50,14 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
     public void addToolButtonClicked(View view) {
         String name = toolName.getText().toString();
         String desc = toolDesc.getText().toString();
-        String myUid = SignUpLoginActivity.firebaseHelper.getmAuth().getUid();
+        String email = SignUpLoginActivity.firebaseHelper.getmAuth().getCurrentUser().getDisplayName();
 
         /*
         The code is adding, however it isn't saving the UID.  Check the code in Tool constructor
         and also check the code when teh docID is being saved.
          */
 
-        Tool t = new Tool(name, desc, myUid);
+        Tool t = new Tool(name, desc, email);
         SignUpLoginActivity.firebaseHelper.addData(t);
 
         toolName.setText("");
