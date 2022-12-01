@@ -18,7 +18,6 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
     Spinner spinner;
     EditText toolName, toolDesc;
     String spinnerSelectedText = "none";
-    int memoryRatingNum;
 
     // How to implement a Spinner
     // https://www.tutorialspoint.com/how-to-get-spinner-value-in-android
@@ -56,13 +55,8 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
         The code is adding, however it isn't saving the UID.  Check the code in Tool constructor
         and also check the code when teh docID is being saved.
          */
-
-<<<<<<< HEAD
         Tool t = new Tool(name, desc, email);
-=======
-        Tool t = new Tool(name, desc, myUid);
         Log.d("Denna", "" + t.toString());
->>>>>>> parent of e664fe9 (Merge branch 'backpack-code-' of https://github.com/BoildSoap/EZ-Tools into backpack-code-)
         SignUpLoginActivity.firebaseHelper.addData(t);
 
         toolName.setText("");
