@@ -192,7 +192,7 @@ certain things from occurring until after the onSuccess is finished.
                             }
 
                             Log.i(TAG, "Success reading data: "+ allUsers.toString());
-                            firestoreCallback.onCallback(allUsers);
+                            firestoreCallback.onCallback(myTools);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());

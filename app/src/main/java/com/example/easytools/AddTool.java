@@ -57,8 +57,7 @@ public class AddTool extends AppCompatActivity implements AdapterView.OnItemSele
         and also check the code when teh docID is being saved.
          */
 
-        Tool t = new Tool(name, desc, myUid,this.getOwnerEMAIL);
-        Log.d("Denna", "" + t.toString());
+        Tool t = new Tool(name, desc, myUid);
         SignUpLoginActivity.firebaseHelper.addData(t);
 
         toolName.setText("");

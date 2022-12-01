@@ -64,6 +64,9 @@ public class Tool implements Parcelable {
         outUID = parcel.readString();
     }
 
+    public Tool(String name, String desc, String myUid) {
+    }
+
     /**
      * This is what is used when we send the Memory object through an intent
      * It is also a method that is part of the Parceable interface and is needed
