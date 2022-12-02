@@ -35,6 +35,7 @@ public class BorrowToolDetailPage extends AppCompatActivity {
     public void updateAvailability(View v) {
         Log.d(TAG, "updating aval tool " + currentTool.getName());
         SignUpLoginActivity.firebaseHelper.updateAval(currentTool);
+        SignUpLoginActivity.firebaseHelper.attachReadDataToUser();
     }
     public void goHome(View view) {
         Intent intent = new Intent(BorrowToolDetailPage.this, homepage.class);
