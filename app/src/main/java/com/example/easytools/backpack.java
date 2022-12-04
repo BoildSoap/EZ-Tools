@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -49,12 +50,23 @@ public class backpack extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // Creates an intent to go from the Specific Category to the specific Detail
-                Intent intent = new Intent(backpack.this, EditTools.class);
-                // Sends the specific object at index i to the Detail activity
-                // In this case, it is sending the particular Food object
-                intent.putExtra(CHOSEN_TOOL, myList.get(position));
-                startActivity(intent);
+                if(myList.get(position).getMyUserName().equals(SignUpLoginActivity.firebaseHelper.getUserEmail()) && (myList.get(position).isAval() == true)) {
+                    // Creates an intent to go from the Specific Category to the specific Detail
+                    Intent intent = new Intent(backpack.this, EditTools.class);
+                    // Sends the specific object at index i to the Detail activity
+                    // In this case, it is sending the particular Food object
+                    intent.putExtra(CHOSEN_TOOL, myList.get(position));
+                    startActivity(intent);
+                }else if((myList.get(position).getMyUserName().equals(SignUpLoginActivity.firebaseHelper.getUserEmail()) && !(myList.get(position).isAval() == true))) {
+                    Toast.makeText(getApplicationContext(), "Tool is Lent out. Cannot Edit", Toast.LENGTH_SHORT).show();
+                }else {
+                    // Creates an intent to go from the Specific Category to the specific Detail
+                    Intent intent = new Intent(backpack.this, ReturnTool.class);
+                    // Sends the specific object at index i to the Detail activity
+                    // In this case, it is sending the particular Food object
+                    intent.putExtra(CHOSEN_TOOL, myList.get(position));
+                    startActivity(intent);
+                }
             }
         });
 

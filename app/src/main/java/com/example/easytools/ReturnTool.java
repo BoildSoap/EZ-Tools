@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class BorrowToolDetailPage extends AppCompatActivity {
+public class ReturnTool extends AppCompatActivity {
 
     public final String TAG = "Denna";
     TextView nameET, descET;
@@ -18,7 +18,7 @@ public class BorrowToolDetailPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_borrow_tool_detail_page);
+        setContentView(R.layout.activity_return_tool);
 
         nameET = findViewById(R.id.toolNameTV);
         descET = findViewById(R.id.toolDescTV);
@@ -34,19 +34,19 @@ public class BorrowToolDetailPage extends AppCompatActivity {
     }
     public void updateAvailability(View v) {
         Log.d(TAG, "updating aval tool " + currentTool.getName());
-        SignUpLoginActivity.firebaseHelper.updateAvalTrue(currentTool);
+        SignUpLoginActivity.firebaseHelper.updateAvalFalse(currentTool);
         SignUpLoginActivity.firebaseHelper.attachReadDataToUser();
-        Intent intent = new Intent(BorrowToolDetailPage.this, homepage.class);
+        Intent intent = new Intent(ReturnTool.this, homepage.class);
         startActivity(intent);
     }
     public void goHome(View view) {
-        Intent intent = new Intent(BorrowToolDetailPage.this, homepage.class);
+        Intent intent = new Intent(ReturnTool.this, homepage.class);
         startActivity(intent);
     }
 
     public void goBack(View v) {
         Log.d(TAG, "go back");
-        Intent intent = new Intent(BorrowToolDetailPage.this, backpack.class);
+        Intent intent = new Intent(ReturnTool.this, backpack.class);
         startActivity(intent);
     }
 

@@ -36,7 +36,7 @@ public class Tool implements Parcelable {
         this.isAval = true;
         this.outUID = "no outUID yet";
         this.myUserName = ownerUserName;
-        this.outUserName = "no outUserName yet";
+        this.outUserName = "";
     }
 
 
@@ -49,7 +49,7 @@ public class Tool implements Parcelable {
         this.isAval = true;
         this.outUID = null;
         myUserName = "No Owner Email";
-        this.outUserName = "no outUserName yet";
+        this.outUserName = "";
     }
 
     /** This is a "constructor" of sorts that is needed with the Parceable interface to

@@ -204,7 +204,7 @@ certain things from occurring until after the onSuccess is finished.
                     }
                 });
     }
-    void updateAval(Tool m){
+    void updateAvalTrue(Tool m){
         String docId = m.getDocID();
 
         db.collection("allTools").document(docId)
@@ -239,6 +239,56 @@ certain things from occurring until after the onSuccess is finished.
 
         db.collection("allTools").document(docId)
                 .update("outUID", uid)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+
+    }
+
+    void updateAvalFalse(Tool m){
+        String docId = m.getDocID();
+
+        db.collection("allTools").document(docId)
+                .update("aval", true)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+
+        db.collection("allTools").document(docId)
+                .update("outUserName", "None")
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+
+        db.collection("allTools").document(docId)
+                .update("outUID", "no outUID yet")
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -323,7 +373,7 @@ certain things from occurring until after the onSuccess is finished.
     public void deleteData(Tool m) {
         // delete item w from database
         // this method is overloaded and incorporates the interface to handle the asynch calls
-        deleteData(m, new FirestoreCallback() {
+        deleteData2(m, new FirestoreCallback() {
             @Override
             public void onCallback(ArrayList<Tool> myList) {
                 Log.i(TAG, "Inside deleteData, onCallBack" + myList.toString());
@@ -332,17 +382,18 @@ certain things from occurring until after the onSuccess is finished.
 
     }
 
-    private void deleteData(Tool tool, FirestoreCallback firestoreCallback) {
+    private void deleteData2(Tool tool, FirestoreCallback firestoreCallback) {
         // delete item w from database
         String docId = tool.getDocID();
-        db.collection("allTools").document(uid).collection("allTools")
-                .document(docId)
+        Log.i(TAG, docId + " deleting noW");
+        db.collection("allTools").document(docId)
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.i(TAG, tool.getName() + " successfully deleted");
                         readData(firestoreCallback);
+                        SignUpLoginActivity.firebaseHelper.attachReadDataToUser();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

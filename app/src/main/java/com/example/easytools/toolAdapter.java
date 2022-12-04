@@ -25,12 +25,22 @@ public class toolAdapter extends ArrayAdapter<Tool> {
         TextView tvAval = (TextView) convertView.findViewById(R.id.tvAval);
         tvToolName.setText(myTool.getName());
 
-        if(myTool.getoutUserName() != "no outUserName yet"){
-            tvoutUserName.setText("Borrower: " + myTool.getoutUserName());
+        if(myTool.getoutUserName() != ""){
+            if(myTool.getoutUserName().equals(SignUpLoginActivity.firebaseHelper.getUserEmail())){
+                tvoutUserName.setText("Borrower: You!");
+            }else {
+                tvoutUserName.setText("Borrower: " + myTool.getoutUserName());
+            }
         }else{
             tvoutUserName.setText("Borrower: None");
         }
-        tvmyUserName.setText("Owner: " + myTool.getMyUserName());
+
+        if(myTool.getMyUserName().equals(SignUpLoginActivity.firebaseHelper.getUserEmail())){
+            tvmyUserName.setText("Owner: You!");
+        }else{
+            tvmyUserName.setText("Owner: " + myTool.getMyUserName());
+        }
+
         if(myTool.isAval()==true) {
             tvAval.setText("Available!");
         }else{
