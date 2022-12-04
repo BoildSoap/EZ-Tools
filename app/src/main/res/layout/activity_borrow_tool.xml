@@ -28,18 +28,18 @@
 
         <TextView
             android:id="@+id/TitleBackpack"
-            android:layout_width="154dp"
-            android:layout_height="94dp"
+            android:layout_width="229dp"
+            android:layout_height="90dp"
+            android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:text="BORROW TOOLS"
-            android:textColor="@color/white"
+            android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/textHeight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.249" />
+            app:layout_constraintVertical_bias="0.274" />
 
         <ListView
             android:id="@+id/borrowToolListView"

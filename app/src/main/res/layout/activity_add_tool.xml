@@ -21,12 +21,13 @@
         app:srcCompat="@drawable/easytools" />
 
     <TextView
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/primaryTextColor"
         android:id="@+id/titlemem"
         android:layout_width="324dp"
         android:layout_height="76dp"
         android:gravity="center_horizontal"
-        android:text="Lend Tool"
-        android:textColor="@color/white"
+        android:text="LEND TOOL"
         android:textSize="@dimen/textHeight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

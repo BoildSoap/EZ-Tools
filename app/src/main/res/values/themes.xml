@@ -3,7 +3,7 @@
     <style name="Theme.EasyTools" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#F44336</item>
-        <item name="colorPrimaryVariant">#bf360c</item>
+        <item name="colorPrimaryVariant">#FF5722</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#c3c9e8</item>
@@ -11,7 +11,7 @@
         <item name="colorOnSecondary">#9298b6</item>
         <item name ="android:colorBackground">#21293D</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">#FFC107</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#FF9800</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="EditTextStyle" parent="@android:style/TextAppearance.Small">
