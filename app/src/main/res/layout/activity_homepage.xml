@@ -7,6 +7,18 @@
     tools:context=".homepage">
 
   <Button
+      android:id="@+id/addTool"
+      android:layout_width="273dp"
+      android:layout_height="60dp"
+      android:onClick="addTools"
+      android:text="Lend out a Tool"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.472" />
+
+  <Button
 
       android:id="@+id/logout"
       android:layout_width="157dp"
@@ -18,43 +30,31 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.746" />
+      app:layout_constraintVertical_bias="0.681" />
 
   <Button
       android:id="@+id/backpackbutton"
-      android:onClick="toBackpack"
       android:layout_width="149dp"
       android:layout_height="55dp"
+      android:onClick="toBackpack"
       android:text="My Backpack"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.344" />
+      app:layout_constraintVertical_bias="0.36" />
 
   <Button
-      android:id="@+id/addTool"
-      android:onClick="addTools"
-      android:layout_width="273dp"
-      android:layout_height="60dp"
-      android:text="Lend out a Tool"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.499" />
-
-  <Button
-      android:onClick="borrowTools"
       android:id="@+id/button3"
       android:layout_width="273dp"
       android:layout_height="60dp"
+      android:onClick="borrowTools"
       android:text="Borrow a tool"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.603" />
+      app:layout_constraintVertical_bias="0.576" />
 
   <ImageView
       android:id="@+id/imageView"

@@ -33,7 +33,7 @@ public class FirebaseHelper {
     private static String uid = null;      // var will be updated for currently signed in user
     private final FirebaseAuth mAuth;
     private final FirebaseFirestore db;
-    private final ArrayList<Tool> myTools;
+    private final ArrayList<Tool> allTools;
     private final ArrayList<RealUser> allUsers;
 
     // we don't need this yet
@@ -43,7 +43,7 @@ public class FirebaseHelper {
     public FirebaseHelper() {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-        myTools = new ArrayList<>();
+        allTools = new ArrayList<>();
         allUsers = new ArrayList<>();
 
     }
@@ -112,7 +112,7 @@ public class FirebaseHelper {
         addData(t, new FirestoreCallback() {
             @Override
             public void onCallback(ArrayList<Tool> myList) {
-                Log.i(TAG, "Inside addData, onCallback :" + myTools.toString());
+                Log.i(TAG, "Inside addData, onCallback :" + allTools.toString());
             }
         });
     }
@@ -141,21 +141,31 @@ public class FirebaseHelper {
 
 // This returns ALL tools
     public ArrayList<Tool> getToolArrayList() {
-        return myTools;
+        ArrayList<Tool> myAvalTools = new  ArrayList<>();
+        for(Tool t: allTools){
+            Log.d(TAG, t.getUserID() + " " + uid);
+            if((!(t.getUserID().equals(uid)))  && !(t.getOutUID().equals(uid))){
+                myAvalTools.add(t);
+                Log.d(TAG, "added " +t.toString()+" to myBackpack");
+            }
+
+        }
+        return myAvalTools;
     }
 
     public ArrayList<RealUser> getUserArrayList() {
         return allUsers;
     }
     public ArrayList<Tool> getMyTools(){
-        Log.d(TAG, "Inside getmytools and myTools size is " + myTools.size());
+        Log.d(TAG, "Inside getmytools and allTools size is " +allTools.size());
         Log.d(TAG, uid);
         ArrayList<Tool> myBackpack = new  ArrayList<>();
-        for(Tool t: myTools){
-            Log.d(TAG, t.getUserID() + " " + uid);
-            if(t.getUserID().equals(uid)){
+        for(Tool t: allTools){
+            Log.d(TAG, "tooluid" + t.getUserID() + "myuid" + uid + " outuid:" + t.getOutUID());
+
+            if(t.getUserID().equals(uid) || t.getOutUID().equals(uid)){
                 myBackpack.add(t);
-                Log.d(TAG, "added " +t.toString()+" to myTools");
+                Log.d(TAG, "added " +t.toString()+" to myBackpack");
             }
 
         }
@@ -186,7 +196,7 @@ certain things from occurring until after the onSuccess is finished.
                             }
 
                             Log.i(TAG, "Success reading data: "+ allUsers.toString());
-                            firestoreCallback.onCallback(myTools);
+                            firestoreCallback.onCallback(allTools);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());
@@ -211,12 +221,43 @@ certain things from occurring until after the onSuccess is finished.
                         Log.w(TAG, "Error updating document", e);
                     }
                 });
+
+        db.collection("allTools").document(docId)
+                .update("outUserName", SignUpLoginActivity.firebaseHelper.getUserEmail())
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+
+        db.collection("allTools").document(docId)
+                .update("outUID", uid)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+
     }
     private void readData(FirestoreCallback firestoreCallback) {
-        myTools.clear();        // empties the AL so that it can get a fresh copy of data
+        allTools.clear();        // empties the AL so that it can get a fresh copy of data
 
         db.collection("allTools")
-                .whereEqualTo("aval", true)
+                //.whereEqualTo("aval", true)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -226,11 +267,11 @@ certain things from occurring until after the onSuccess is finished.
                                 Tool tool = doc.toObject(Tool.class);
                                 Log.i(TAG, "the document is : "+ doc);
 
-                                myTools.add(tool);
+                                allTools.add(tool);
                             }
 
-                            Log.i(TAG, "Success reading data: "+ myTools.toString());
-                            firestoreCallback.onCallback(myTools);
+                            Log.i(TAG, "Success reading data: "+ allTools.toString());
+                            firestoreCallback.onCallback(allTools);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());
@@ -310,6 +351,10 @@ certain things from occurring until after the onSuccess is finished.
                         Log.i(TAG, "Error deleting document", e);
                     }
                 });
+    }
+    public String getUserEmail(){
+        String email = mAuth.getCurrentUser().getEmail();
+        return email;
     }
 }
 

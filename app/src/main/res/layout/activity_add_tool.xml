@@ -40,7 +40,7 @@
         android:layout_width="343dp"
         android:layout_height="69dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Tool Name"
         android:inputType="textPersonName"
         android:outlineAmbientShadowColor="@color/white"
         android:selectAllOnFocus="false"

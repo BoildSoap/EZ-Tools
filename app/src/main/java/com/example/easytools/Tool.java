@@ -12,26 +12,31 @@ public class Tool implements Parcelable {
     boolean isAval;
     private String outUID;
     private String myUserName;
+    private String outUserName;
 
     // add boolean for status
     // add user id for checked out
 
-    public Tool(String name, String desc, String docID,String userID, String outUID) {
+    public Tool(String name, String desc, String docID,String userID, String outUID,String ownerUserName,String outUserName) {
         this.name = name;
         this.desc = desc;
         this.docID = docID;
         this.userID = userID;
         this.isAval = true;
         this.outUID = outUID;
+        this.myUserName = ownerUserName;
+        this.outUserName = outUserName;
     }
 
-    public Tool(String name, String desc, String userID) {
+    public Tool(String name, String desc, String userID, String ownerUserName) {
         this.name = name;
         this.desc = desc;
         this.docID = "No docID yet";
         this.userID = userID;
         this.isAval = true;
         this.outUID = "no outUID yet";
+        this.myUserName = ownerUserName;
+        this.outUserName = "no outUserName yet";
     }
 
 
@@ -43,6 +48,8 @@ public class Tool implements Parcelable {
         this.userID = "No userID yet";
         this.isAval = true;
         this.outUID = null;
+        myUserName = "No Owner Email";
+        this.outUserName = "no outUserName yet";
     }
 
     /** This is a "constructor" of sorts that is needed with the Parceable interface to
@@ -60,6 +67,8 @@ public class Tool implements Parcelable {
         userID = parcel.readString();
         isAval = parcel.readBoolean();
         outUID = parcel.readString();
+        myUserName =  parcel.readString();
+        outUserName = parcel.readString();
     }
 
     /**
@@ -78,6 +87,8 @@ public class Tool implements Parcelable {
         dest.writeString(userID);
         dest.writeBoolean(isAval);
         dest.writeString(outUID);
+        dest.writeString(myUserName);
+        dest.writeString(outUserName);
     }
 
 
@@ -109,17 +120,17 @@ public class Tool implements Parcelable {
      *           https://stackoverflow.com/questions/4778834/purpose-of-describecontents-of-parcelable-interface
      * @return
      */
-    public String getMyUserName(){
-        ArrayList<RealUser> myList = SignUpLoginActivity.firebaseHelper.getUserArrayList();
-        String myUserName = "";
-        for(RealUser u: myList){
-            if(u.getDocID().equals(this.getUserID())){
-                myUserName = u.getName();
-            }
-
-        }
-        return myUserName;
-    }
+//    public String getMyUserName(){
+//        ArrayList<RealUser> myList = SignUpLoginActivity.firebaseHelper.getUserArrayList();
+//        String myUserName = "";
+//        for(RealUser u: myList){
+//            if(u.getDocID().equals(this.getUserID())){
+//                myUserName = u.getName();
+//            }
+//
+//        }
+//        return myUserName;
+//    }
 
     @Override
     public int describeContents() {
@@ -177,4 +188,21 @@ public class Tool implements Parcelable {
     public String getDocID() {
         return docID;
     }
+
+    public void setMyUserName(String myUserName) {
+        this.myUserName = myUserName;
+    }
+
+    public String getMyUserName() {
+        return myUserName;
+    }
+
+    public void setoutUserName(String outUserName) {
+        this.outUserName = outUserName;
+    }
+
+    public String getoutUserName() {
+        return outUserName;
+    }
+
 }

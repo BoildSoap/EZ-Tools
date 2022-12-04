@@ -20,10 +20,17 @@ public class toolAdapter extends ArrayAdapter<Tool> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.one_line_tool, parent, false);
         }
         TextView tvToolName = (TextView) convertView.findViewById(R.id.toolName);
-        TextView tvOwnerEmail = (TextView) convertView.findViewById(R.id.ownerEmail);
+        TextView tvmyUserName = (TextView) convertView.findViewById(R.id.myUserName);
+        TextView tvoutUserName = (TextView) convertView.findViewById(R.id.outUserName);
         TextView tvAval = (TextView) convertView.findViewById(R.id.tvAval);
         tvToolName.setText(myTool.getName());
-        tvOwnerEmail.setText(myTool.getMyUserName());
+
+        if(myTool.getoutUserName() != "no outUserName yet"){
+            tvoutUserName.setText("Borrower: " + myTool.getoutUserName());
+        }else{
+            tvoutUserName.setText("Borrower: None");
+        }
+        tvmyUserName.setText("Owner: " + myTool.getMyUserName());
         if(myTool.isAval()==true) {
             tvAval.setText("Available!");
         }else{
