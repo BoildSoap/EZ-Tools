@@ -393,7 +393,7 @@ certain things from occurring until after the onSuccess is finished.
                     public void onSuccess(Void unused) {
                         Log.i(TAG, tool.getName() + " successfully deleted");
                         readData(firestoreCallback);
-                        SignUpLoginActivity.firebaseHelper.attachReadDataToUser();
+                        //SignUpLoginActivity.firebaseHelper.attachReadDataToUser();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

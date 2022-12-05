@@ -21,6 +21,8 @@
         app:srcCompat="@drawable/easytools" />
 
     <EditText
+        android:backgroundTint = "@color/white"
+        android:shadowColor="@color/white"
         android:id="@+id/toolNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,6 +59,8 @@
         app:layout_constraintTop_toBottomOf="@+id/deleteMemoryButton" />
 
     <EditText
+        android:backgroundTint = "@color/white"
+        android:shadowColor="@color/white"
         android:id="@+id/toolDescTV"
         android:layout_width="745dp"
         android:layout_height="43dp"
