@@ -144,7 +144,7 @@ public class FirebaseHelper {
         ArrayList<Tool> myAvalTools = new  ArrayList<>();
         for(Tool t: allTools){
             Log.d(TAG, t.getUserID() + " " + uid);
-            if((!(t.getUserID().equals(uid)))  && !(t.getOutUID().equals(uid))){
+            if((!(t.getUserID().equals(uid)))  && !(t.getOutUID().equals(uid)) || t.isAval() == true){
                 myAvalTools.add(t);
                 Log.d(TAG, "added " +t.toString()+" to myBackpack");
             }
